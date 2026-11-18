@@ -19,5 +19,5 @@ jobs:
       - run: python checker.py
         env:
           FIREBASE_CREDENTIALS: ${{ secrets.FIREBASE_CREDENTIALS }}
-      - name: Save seen alerts
-        run: | git config user.name "alert-bot" git config user.email "bot@users.noreply.github.com" git add seen.json git commit -m "update seen" || echo "no changes" git push
+            - name: Save seen alerts
+        run: git config user.name alert-bot && git config user.email bot@users.noreply.github.com && git add seen.json && (git commit -m "update seen" || echo "no changes") && git push
